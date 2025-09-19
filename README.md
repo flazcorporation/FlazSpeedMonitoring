@@ -17,29 +17,118 @@ Lihat [LICENSE](https://www.gnu.org/licenses/gpl-3.0.html) untuk detail lengkap.
 
 ## Persyaratan
 
-Script ini memerlukan `speedtest-cli` untuk berfungsi. Install dengan salah satu cara berikut:
+Script ini memerlukan `speedtest-cli` untuk berfungsi. Instalasi berbeda tergantung sistem operasi:
 
-### Ubuntu/Debian:
+### 🐧 Linux (Ubuntu/Debian/CentOS/RHEL)
+
+**Ubuntu/Debian:**
 ```bash
 sudo apt update
 sudo apt install speedtest-cli
 ```
 
-### Menggunakan pip:
+**CentOS/RHEL/Fedora:**
+```bash
+# RHEL/CentOS dengan EPEL
+sudo yum install epel-release
+sudo yum install python3-pip
+pip3 install speedtest-cli
+
+# Fedora
+sudo dnf install python3-pip
+pip3 install speedtest-cli
+```
+
+**Arch Linux:**
+```bash
+sudo pacman -S speedtest-cli
+```
+
+### 🍎 macOS
+
+**Menggunakan Homebrew (recommended):**
+```bash
+# Install Homebrew jika belum ada
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install speedtest-cli
+brew install speedtest-cli
+```
+
+**Menggunakan pip:**
+```bash
+pip3 install speedtest-cli
+```
+
+### 🪟 Windows
+
+**Opsi 1: Menggunakan pip (Python required):**
+```cmd
+# Pastikan Python sudah terinstall
+pip install speedtest-cli
+```
+
+**Opsi 2: Menggunakan Windows Subsystem for Linux (WSL):**
+```bash
+# Install WSL Ubuntu terlebih dahulu
+wsl --install
+
+# Setelah restart, buka WSL dan install speedtest-cli
+sudo apt update
+sudo apt install speedtest-cli
+```
+
+**Opsi 3: Menggunakan Chocolatey:**
+```cmd
+# Install Chocolatey terlebih dahulu
+# Kemudian install speedtest-cli
+choco install speedtest
+```
+
+### 📦 Universal (All OS):
 ```bash
 pip install speedtest-cli
 ```
 
-### Menggunakan snap:
+### 📦 Menggunakan snap (Linux):
 ```bash
 sudo snap install speedtest-cli
 ```
 
 ## Cara Penggunaan
 
-1. Jalankan script:
+### 🐧 Linux / 🍎 macOS
+
+1. **Beri permission executable:**
+```bash
+chmod +x flazspeedmonitor.sh
+```
+
+2. **Jalankan script:**
 ```bash
 ./flazspeedmonitor.sh
+```
+
+### 🪟 Windows
+
+**Opsi 1: Menggunakan WSL (Recommended):**
+```bash
+# Di WSL Terminal
+chmod +x flazspeedmonitor.sh
+./flazspeedmonitor.sh
+```
+
+**Opsi 2: Menggunakan Git Bash:**
+```bash
+# Di Git Bash Terminal
+chmod +x flazspeedmonitor.sh
+./flazspeedmonitor.sh
+```
+
+**Opsi 3: Menggunakan PowerShell/CMD dengan Bash:**
+```cmd
+# Jika menggunakan Windows dengan bash support
+bash flazspeedmonitor.sh
 ```
 
 2. Pilih interval speedtest:
@@ -107,13 +196,48 @@ File `index.html` disediakan untuk memvisualisasikan data hasil monitoring dalam
 ### Cara Menggunakan Dashboard:
 
 1. **Buka dashboard**:
+
+   **🐧 Linux:**
    ```bash
-   # Buka file index.html di browser
+   # Firefox
    firefox index.html
-   # atau
+
+   # Chrome/Chromium
    google-chrome index.html
-   # atau
+   chromium-browser index.html
+
+   # Default browser
    xdg-open index.html
+   ```
+
+   **🍎 macOS:**
+   ```bash
+   # Default browser
+   open index.html
+
+   # Safari
+   open -a Safari index.html
+
+   # Chrome
+   open -a "Google Chrome" index.html
+   ```
+
+   **🪟 Windows:**
+   ```cmd
+   REM Default browser
+   start index.html
+
+   REM Chrome
+   start chrome index.html
+
+   REM Edge
+   start msedge index.html
+   ```
+
+   **WSL (Windows Subsystem for Linux):**
+   ```bash
+   # Buka dengan default browser Windows
+   explorer.exe index.html
    ```
 
 2. **Auto-load data**: Dashboard akan secara otomatis memuat file `speed_results.csv` jika berada di direktori yang sama
@@ -143,10 +267,52 @@ File `index.html` disediakan untuk memvisualisasikan data hasil monitoring dalam
 - **Dual Y-Axis**: Speed dalam Mbps (kiri) dan Ping dalam ms (kanan)
 - **Time Labels**: Menampilkan tanggal dan waktu untuk setiap data point
 
-## Tips
+## 💡 Tips OS-Specific
+
+### 🐧 Linux
+- Pastikan user memiliki permission untuk menjalankan script
+- Gunakan `nohup` untuk menjalankan di background: `nohup ./flazspeedmonitor.sh &`
+- File log tersimpan di direktori yang sama dengan script
+
+### 🍎 macOS
+- Mungkin perlu bypass Gatekeeper untuk file script: `sudo spctl --master-disable` (tidak recommended untuk security)
+- Atau klik kanan script → Open → Open untuk bypass sekali
+- Terminal default sudah support bash script
+
+### 🪟 Windows
+- **WSL (Recommended)**: Performa terbaik dan kompatibilitas penuh
+- **Git Bash**: Alternative yang baik jika WSL tidak tersedia
+- **PowerShell**: Mungkin memerlukan konfigurasi tambahan untuk bash support
+- File CSV akan tersimpan di direktori script di dalam WSL/Git Bash environment
+
+## 🔧 Troubleshooting
+
+### Error "speedtest-cli not found"
+```bash
+# Cek apakah speedtest-cli terinstall
+which speedtest-cli
+
+# Jika tidak ada, install ulang sesuai OS
+```
+
+### Error "Permission denied"
+```bash
+# Linux/macOS/WSL
+chmod +x flazspeedmonitor.sh
+
+# Windows dengan Git Bash
+chmod +x flazspeedmonitor.sh
+```
+
+### Dashboard tidak bisa load CSV
+- Pastikan file `index.html` dan `speed_results.csv` di direktori yang sama
+- Coba refresh browser (F5)
+- Cek console browser untuk error details
+
+## Tips Umum
 
 - Pastikan koneksi internet stabil saat menjalankan
 - File CSV akan dibuat otomatis di direktori yang sama
 - Gunakan Ctrl+C untuk menghentikan monitoring kapan saja
 - Hasil test yang gagal akan ditandai sebagai "ERROR" dalam CSV
-- Gunakan dashboard HTML untuk analisis visual yang lebih mudah# FlazSpeedMonitoring
+- Gunakan dashboard HTML untuk analisis visual yang lebih mudah
