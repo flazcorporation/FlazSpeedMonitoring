@@ -98,6 +98,12 @@ Enter duration in hours: 2
 
 File `index.html` disediakan untuk memvisualisasikan data hasil monitoring dalam bentuk grafik interaktif.
 
+### Contoh Tampilan Dashboard
+
+![Dashboard Screenshot](image.png)
+
+*Screenshot menunjukkan dashboard dengan grafik real-time dan statistik monitoring kecepatan internet*
+
 ### Cara Menggunakan Dashboard:
 
 1. **Buka dashboard**:
@@ -118,7 +124,9 @@ File `index.html` disediakan untuk memvisualisasikan data hasil monitoring dalam
 
 - ✅ **Grafik garis interaktif** dengan Chart.js
 - ✅ **Multi-axis chart**: Speed (Mbps) di kiri, Ping (ms) di kanan
-- ✅ **Real-time statistics**: Rata-rata download, upload, ping, dan total tes
+- ✅ **Real-time statistics**: Rata-rata download, upload, ping
+- ✅ **Test counter**: Successful tests, error count, dan total tests
+- ✅ **Error markers**: Penanda segitiga merah untuk connection errors
 - ✅ **Responsive design** yang mobile-friendly
 - ✅ **Auto-loading** CSV dari direktori yang sama
 - ✅ **Manual file upload** jika diperlukan
@@ -126,7 +134,12 @@ File `index.html` disediakan untuk memvisualisasikan data hasil monitoring dalam
 ### Komponen Visualisasi:
 
 - **Line Chart**: Menampilkan trend download speed, upload speed, dan ping over time
-- **Statistics Cards**: Menampilkan ringkasan data (rata-rata dan total)
+- **Error Markers**: Segitiga merah menunjukkan waktu terjadinya connection error
+- **Statistics Cards**:
+  - Average Download/Upload/Ping (hanya dari test yang sukses)
+  - Successful Tests (hijau) - jumlah test berhasil
+  - Error Count (merah) - jumlah test gagal
+  - Total Tests - total semua test
 - **Dual Y-Axis**: Speed dalam Mbps (kiri) dan Ping dalam ms (kanan)
 - **Time Labels**: Menampilkan tanggal dan waktu untuk setiap data point
 

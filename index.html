@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlazSpeedMonitoring Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-bottom: 30px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-card {
+            background-color: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 0;
+        }
+        .stat-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        .file-input {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px dashed #ddd;
+            border-radius: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FlazSpeedMonitoring Dashboard</h1>
+
+        <div class="file-input">
+            <input type="file" id="csvFile" accept=".csv" />
+            <p>Select your speed_results.csv file to view the data</p>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="speedChart"></canvas>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="avgDownload">-</div>
+                <div class="stat-label">Average Download (Mbps)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="avgUpload">-</div>
+                <div class="stat-label">Average Upload (Mbps)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="avgPing">-</div>
+                <div class="stat-label">Average Ping (ms)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="successfulTests" style="color: #28a745;">-</div>
+                <div class="stat-label">Successful Tests</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="errorCount" style="color: #dc3545;">-</div>
+                <div class="stat-label">Error Count</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalTests">-</div>
+                <div class="stat-label">Total Tests</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let chart;
+
+        document.getElementById('csvFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const csv = e.target.result;
+                    parseAndDisplayData(csv);
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        function parseAndDisplayData(csv) {
+            const lines = csv.trim().split('\n');
+            const headers = lines[0].split(',');
+
+            const data = {
+                timestamps: [],
+                dates: [],
+                times: [],
+                downloadSpeeds: [],
+                uploadSpeeds: [],
+                pings: [],
+                errors: []
+            };
+
+            for (let i = 1; i < lines.length; i++) {
+                const row = lines[i].split(',');
+                if (row.length >= 6) {
+                    data.timestamps.push(parseInt(row[0]));
+                    data.dates.push(row[1]);
+                    data.times.push(row[2]);
+
+                    const isError = row[3] === 'ERROR';
+                    data.downloadSpeeds.push(isError ? null : parseFloat(row[3]));
+                    data.uploadSpeeds.push(isError ? null : parseFloat(row[4]));
+                    data.pings.push(isError ? null : parseFloat(row[5]));
+                    data.errors.push(isError ? 150 : null);
+                }
+            }
+
+            createChart(data);
+            updateStats(data);
+        }
+
+        function createChart(data) {
+            const ctx = document.getElementById('speedChart').getContext('2d');
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            const labels = data.times.map((time, index) => {
+                return `${data.dates[index]} ${time}`;
+            });
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Download Speed (Mbps)',
+                            data: data.downloadSpeeds,
+                            borderColor: '#007bff',
+                            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                            tension: 0.1,
+                            fill: false,
+                            spanGaps: true
+                        },
+                        {
+                            label: 'Upload Speed (Mbps)',
+                            data: data.uploadSpeeds,
+                            borderColor: '#28a745',
+                            backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                            tension: 0.1,
+                            fill: false,
+                            spanGaps: true
+                        },
+                        {
+                            label: 'Ping (ms)',
+                            data: data.pings,
+                            borderColor: '#dc3545',
+                            backgroundColor: 'rgba(220, 53, 69, 0.1)',
+                            tension: 0.1,
+                            fill: false,
+                            yAxisID: 'y1',
+                            spanGaps: true
+                        },
+                        {
+                            label: 'Connection Error',
+                            data: data.errors,
+                            borderColor: '#ff6b6b',
+                            backgroundColor: '#ff6b6b',
+                            pointRadius: 8,
+                            pointHoverRadius: 10,
+                            showLine: false,
+                            pointStyle: 'triangle'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Date & Time'
+                            },
+                            ticks: {
+                                maxTicksLimit: 10
+                            }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Speed (Mbps)'
+                            },
+                            min: 0,
+                            max: 300,
+                            ticks: {
+                                stepSize: 10
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Ping (ms)'
+                            },
+                            min: 0,
+                            max: 300,
+                            ticks: {
+                                stepSize: 10
+                            },
+                            grid: {
+                                drawOnChartArea: false,
+                            },
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Internet Speed Over Time'
+                        },
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateStats(data) {
+            const validDownloadSpeeds = data.downloadSpeeds.filter(speed => !isNaN(speed) && speed !== null);
+            const validUploadSpeeds = data.uploadSpeeds.filter(speed => !isNaN(speed) && speed !== null);
+            const validPings = data.pings.filter(ping => !isNaN(ping) && ping !== null);
+
+            const avgDownload = validDownloadSpeeds.length > 0 ?
+                (validDownloadSpeeds.reduce((a, b) => a + b, 0) / validDownloadSpeeds.length).toFixed(2) : 0;
+            const avgUpload = validUploadSpeeds.length > 0 ?
+                (validUploadSpeeds.reduce((a, b) => a + b, 0) / validUploadSpeeds.length).toFixed(2) : 0;
+            const avgPing = validPings.length > 0 ?
+                (validPings.reduce((a, b) => a + b, 0) / validPings.length).toFixed(2) : 0;
+            const totalTests = data.downloadSpeeds.length;
+            const errorCount = data.errors.filter(error => error !== null).length;
+            const successfulTests = totalTests - errorCount;
+
+            document.getElementById('avgDownload').textContent = avgDownload;
+            document.getElementById('avgUpload').textContent = avgUpload;
+            document.getElementById('avgPing').textContent = avgPing;
+            document.getElementById('successfulTests').textContent = successfulTests;
+            document.getElementById('errorCount').textContent = errorCount;
+            document.getElementById('totalTests').textContent = totalTests;
+        }
+
+        // Auto-load CSV if it's in the same directory
+        function loadCSVData() {
+            // Add cache busting parameter to force fresh data
+            const timestamp = new Date().getTime();
+            fetch(`./speed_results.csv?t=${timestamp}`)
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+                    throw new Error('CSV file not found');
+                })
+                .then(csv => {
+                    parseAndDisplayData(csv);
+                    console.log(`Data refreshed at ${new Date().toLocaleTimeString()}`);
+                })
+                .catch(error => {
+                    console.log('CSV file not found in current directory. Please select a file manually.');
+                });
+        }
+
+        // Initial load
+        loadCSVData();
+
+        // Auto-refresh every 3 seconds
+        setInterval(loadCSVData, 3000);
+    </script>
+</body>
+</html>

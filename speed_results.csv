@@ -1,0 +1,106 @@
+Timestamp,Date,Time,Download_Speed_Mbps,Upload_Speed_Mbps,Ping_ms,Server_Location,ISP
+
+1758212198,2025-09-18,23:16:38,104.62,35.03,18.529,Retrieving speedtest.net configuration...,Unknown
+1758212555,2025-09-18,23:22:35,104.44,38.22,20.661,Retrieving speedtest.net configuration...,Unknown
+1758212902,2025-09-18,23:28:22,104.70,36.31,27.751,Retrieving speedtest.net configuration...,Unknown
+1758213253,2025-09-18,23:34:13,103.58,37.65,28.447,Retrieving speedtest.net configuration...,Unknown
+1758213603,2025-09-18,23:40:03,105.25,37.56,28.688,Retrieving speedtest.net configuration...,Unknown
+1758213960,2025-09-18,23:46:00,91.10,37.45,14.562,Retrieving speedtest.net configuration...,Unknown
+1758214313,2025-09-18,23:51:53,68.59,21.96,28.919,Retrieving speedtest.net configuration...,Unknown
+1758214662,2025-09-18,23:57:42,31.70,35.20,12.56,Retrieving speedtest.net configuration...,Unknown
+1758215013,2025-09-19,00:03:33,104.55,38.72,22.589,Retrieving speedtest.net configuration...,Unknown
+1758215367,2025-09-19,00:09:27,101.30,38.44,20.544,Retrieving speedtest.net configuration...,Unknown
+1758215720,2025-09-19,00:15:20,104.98,38.91,20.187,Retrieving speedtest.net configuration...,Unknown
+1758216071,2025-09-19,00:21:11,104.34,38.84,26.963,Retrieving speedtest.net configuration...,Unknown
+1758216418,2025-09-19,00:26:58,103.61,37.68,23.248,Retrieving speedtest.net configuration...,Unknown
+1758216769,2025-09-19,00:32:49,59.62,20.62,37.84,Retrieving speedtest.net configuration...,Unknown
+1758217121,2025-09-19,00:38:41,104.05,37.64,19.268,Retrieving speedtest.net configuration...,Unknown
+1758217469,2025-09-19,00:44:29,104.82,38.63,19.026,Retrieving speedtest.net configuration...,Unknown
+1758217816,2025-09-19,00:50:16,86.75,38.04,20.83,Retrieving speedtest.net configuration...,Unknown
+1758218168,2025-09-19,00:56:08,103.84,36.02,19.066,Retrieving speedtest.net configuration...,Unknown
+1758218468,2025-09-19,01:01:08,ERROR,ERROR,ERROR,ERROR,ERROR
+1758218820,2025-09-19,01:07:00,103.73,38.48,18.885,Retrieving speedtest.net configuration...,Unknown
+1758219178,2025-09-19,01:12:58,104.14,17.42,21.765,Retrieving speedtest.net configuration...,Unknown
+1758219530,2025-09-19,01:18:50,104.48,34.29,18.479,Retrieving speedtest.net configuration...,Unknown
+1758219893,2025-09-19,01:24:53,99.23,38.05,17.276,Retrieving speedtest.net configuration...,Unknown
+1758220242,2025-09-19,01:30:42,99.42,32.89,21.802,Retrieving speedtest.net configuration...,Unknown
+1758220592,2025-09-19,01:36:32,97.52,36.48,19.678,Retrieving speedtest.net configuration...,Unknown
+1758220947,2025-09-19,01:42:27,104.28,34.93,20.139,Retrieving speedtest.net configuration...,Unknown
+1758221298,2025-09-19,01:48:18,90.70,38.85,14.722,Retrieving speedtest.net configuration...,Unknown
+1758221648,2025-09-19,01:54:08,100.58,31.68,19.208,Retrieving speedtest.net configuration...,Unknown
+1758221996,2025-09-19,01:59:56,99.47,38.03,23.374,Retrieving speedtest.net configuration...,Unknown
+1758222297,2025-09-19,02:04:57,ERROR,ERROR,ERROR,ERROR,ERROR
+1758222646,2025-09-19,02:10:46,101.01,36.46,21.184,Retrieving speedtest.net configuration...,Unknown
+1758222992,2025-09-19,02:16:32,104.07,35.11,15.391,Retrieving speedtest.net configuration...,Unknown
+1758223341,2025-09-19,02:22:21,102.99,37.54,20.225,Retrieving speedtest.net configuration...,Unknown
+1758223689,2025-09-19,02:28:09,99.96,33.64,21.147,Retrieving speedtest.net configuration...,Unknown
+1758224035,2025-09-19,02:33:55,104.07,36.45,18.964,Retrieving speedtest.net configuration...,Unknown
+1758224383,2025-09-19,02:39:43,81.36,37.05,15.534,Retrieving speedtest.net configuration...,Unknown
+1758224730,2025-09-19,02:45:30,104.46,35.03,19.161,Retrieving speedtest.net configuration...,Unknown
+1758225079,2025-09-19,02:51:19,104.09,38.08,20.036,Retrieving speedtest.net configuration...,Unknown
+1758225427,2025-09-19,02:57:07,101.15,35.11,19.752,Retrieving speedtest.net configuration...,Unknown
+1758225773,2025-09-19,03:02:53,103.73,37.33,20.457,Retrieving speedtest.net configuration...,Unknown
+1758226118,2025-09-19,03:08:38,101.08,36.57,19.279,Retrieving speedtest.net configuration...,Unknown
+1758226464,2025-09-19,03:14:24,99.74,37.15,20.155,Retrieving speedtest.net configuration...,Unknown
+1758226813,2025-09-19,03:20:13,99.82,34.96,19.872,Retrieving speedtest.net configuration...,Unknown
+1758227161,2025-09-19,03:26:01,100.57,36.71,20.79,Retrieving speedtest.net configuration...,Unknown
+1758227510,2025-09-19,03:31:50,95.70,37.48,18.877,Retrieving speedtest.net configuration...,Unknown
+1758227857,2025-09-19,03:37:37,96.31,37.31,22.515,Retrieving speedtest.net configuration...,Unknown
+1758228204,2025-09-19,03:43:24,103.05,38.16,15.841,Retrieving speedtest.net configuration...,Unknown
+1758228552,2025-09-19,03:49:12,104.15,34.21,17.087,Retrieving speedtest.net configuration...,Unknown
+1758228898,2025-09-19,03:54:58,95.69,36.51,20.851,Retrieving speedtest.net configuration...,Unknown
+1758229252,2025-09-19,04:00:52,101.80,33.61,20.566,Retrieving speedtest.net configuration...,Unknown
+1758229601,2025-09-19,04:06:41,101.07,37.07,19.855,Retrieving speedtest.net configuration...,Unknown
+1758229946,2025-09-19,04:12:26,103.67,38.62,17.767,Retrieving speedtest.net configuration...,Unknown
+1758230292,2025-09-19,04:18:12,103.67,35.36,9.065,Retrieving speedtest.net configuration...,Unknown
+1758230637,2025-09-19,04:23:57,103.95,39.63,9.868,Retrieving speedtest.net configuration...,Unknown
+1758230982,2025-09-19,04:29:42,104.49,38.27,9.906,Retrieving speedtest.net configuration...,Unknown
+1758231327,2025-09-19,04:35:27,104.95,39.06,9.522,Retrieving speedtest.net configuration...,Unknown
+1758231671,2025-09-19,04:41:11,104.00,34.49,9.361,Retrieving speedtest.net configuration...,Unknown
+1758232016,2025-09-19,04:46:56,104.40,38.84,10.014,Retrieving speedtest.net configuration...,Unknown
+1758232361,2025-09-19,04:52:41,103.95,36.80,9.257,Retrieving speedtest.net configuration...,Unknown
+1758232705,2025-09-19,04:58:25,104.91,38.81,9.719,Retrieving speedtest.net configuration...,Unknown
+1758233006,2025-09-19,05:03:26,ERROR,ERROR,ERROR,ERROR,ERROR
+1758233350,2025-09-19,05:09:10,80.94,38.15,9.67,Retrieving speedtest.net configuration...,Unknown
+1758233695,2025-09-19,05:14:55,104.24,38.33,10.56,Retrieving speedtest.net configuration...,Unknown
+1758234040,2025-09-19,05:20:40,103.33,39.03,11.384,Retrieving speedtest.net configuration...,Unknown
+1758234385,2025-09-19,05:26:25,105.05,38.25,10.122,Retrieving speedtest.net configuration...,Unknown
+1758234731,2025-09-19,05:32:11,99.16,34.40,9.17,Retrieving speedtest.net configuration...,Unknown
+1758235075,2025-09-19,05:37:55,88.39,36.35,10.026,Retrieving speedtest.net configuration...,Unknown
+1758235421,2025-09-19,05:43:41,103.60,39.26,10.587,Retrieving speedtest.net configuration...,Unknown
+1758235769,2025-09-19,05:49:29,100.39,39.67,9.107,Retrieving speedtest.net configuration...,Unknown
+1758236114,2025-09-19,05:55:14,94.72,40.29,9.248,Retrieving speedtest.net configuration...,Unknown
+1758236415,2025-09-19,06:00:15,ERROR,ERROR,ERROR,ERROR,ERROR
+1758236760,2025-09-19,06:06:00,104.04,37.18,9.187,Retrieving speedtest.net configuration...,Unknown
+1758237106,2025-09-19,06:11:46,96.74,37.72,10.984,Retrieving speedtest.net configuration...,Unknown
+1758237451,2025-09-19,06:17:31,103.41,36.55,17.155,Retrieving speedtest.net configuration...,Unknown
+1758237798,2025-09-19,06:23:18,104.06,37.75,9.117,Retrieving speedtest.net configuration...,Unknown
+1758238145,2025-09-19,06:29:05,103.49,38.09,11.488,Retrieving speedtest.net configuration...,Unknown
+1758238490,2025-09-19,06:34:50,104.31,38.00,10.427,Retrieving speedtest.net configuration...,Unknown
+1758238835,2025-09-19,06:40:35,105.39,35.88,8.832,Retrieving speedtest.net configuration...,Unknown
+1758239181,2025-09-19,06:46:21,102.30,37.96,9.554,Retrieving speedtest.net configuration...,Unknown
+1758239526,2025-09-19,06:52:06,104.97,37.51,8.653,Retrieving speedtest.net configuration...,Unknown
+1758239872,2025-09-19,06:57:52,104.02,37.71,10.55,Retrieving speedtest.net configuration...,Unknown
+1758240172,2025-09-19,07:02:52,ERROR,ERROR,ERROR,ERROR,ERROR
+1758240517,2025-09-19,07:08:37,100.09,37.83,9.118,Retrieving speedtest.net configuration...,Unknown
+1758240924,2025-09-19,07:15:24,106.43,35.40,19.26,Retrieving speedtest.net configuration...,Unknown
+1758241270,2025-09-19,07:21:10,105.71,34.39,9.244,Retrieving speedtest.net configuration...,Unknown
+1758241621,2025-09-19,07:27:01,105.25,37.39,11.831,Retrieving speedtest.net configuration...,Unknown
+1758241970,2025-09-19,07:32:50,106.19,34.71,10.49,Retrieving speedtest.net configuration...,Unknown
+1758242321,2025-09-19,07:38:41,105.61,37.25,10.202,Retrieving speedtest.net configuration...,Unknown
+1758242668,2025-09-19,07:44:28,106.19,35.88,9.664,Retrieving speedtest.net configuration...,Unknown
+1758243014,2025-09-19,07:50:14,103.27,36.58,9.873,Retrieving speedtest.net configuration...,Unknown
+1758243363,2025-09-19,07:56:03,106.43,37.22,11.968,Retrieving speedtest.net configuration...,Unknown
+1758243713,2025-09-19,08:01:53,105.62,35.45,9.92,Retrieving speedtest.net configuration...,Unknown
+1758244061,2025-09-19,08:07:41,103.72,35.06,9.201,Retrieving speedtest.net configuration...,Unknown
+1758244408,2025-09-19,08:13:28,104.02,34.62,11.223,Retrieving speedtest.net configuration...,Unknown
+1758244757,2025-09-19,08:19:17,101.70,37.69,15.121,Retrieving speedtest.net configuration...,Unknown
+1758245105,2025-09-19,08:25:05,103.29,36.88,9.783,Retrieving speedtest.net configuration...,Unknown
+1758245407,2025-09-19,08:30:07,ERROR,ERROR,ERROR,ERROR,ERROR
+1758245756,2025-09-19,08:35:56,90.56,37.49,9.374,Retrieving speedtest.net configuration...,Unknown
+1758246105,2025-09-19,08:41:45,106.36,36.84,9.645,Retrieving speedtest.net configuration...,Unknown
+1758246455,2025-09-19,08:47:35,99.95,36.93,10.066,Retrieving speedtest.net configuration...,Unknown
+1758246804,2025-09-19,08:53:24,102.37,33.64,9.988,Retrieving speedtest.net configuration...,Unknown
+1758247151,2025-09-19,08:59:11,102.30,35.37,7.285,Retrieving speedtest.net configuration...,Unknown
+1758247451,2025-09-19,09:04:11,ERROR,ERROR,ERROR,ERROR,ERROR
+1758247800,2025-09-19,09:10:00,104.40,35.59,9.045,Retrieving speedtest.net configuration...,Unknown
